@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                font-family: sans-serif;
+                width: max-content;
+            }
+
+            .main_frame {
+                width: 100%;
+                height: 100%;
+            }
+
+            #urls {
+                resize: none;
+                white-space: pre;
+                overflow: auto;
+            }
+
+            label {
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+
+            .oneline_frame {
+                display: inline-block;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                vertical-align: middle;
+            }
+
+            #urls {
+                width: 99%;
+            }
+
+            #replace_from {
+                width: 35%;
+                height: 1.5em;
+            }
+
+            #replace_to {
+                width: 35%;
+                height: 1.5em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main_frame">
+            <div id="label">
+                <label>Urls of Tabs in this Window are:</label>
+            </div>
+            <textarea rows="20" id="urls" wrap="soft" tabindex="1"></textarea>
+            <button id="btn">&gt; Copy &lt;</button>
+            &nbsp;&nbsp;
+            <label>Count: <label id="urls_count"></label></label>
+            <div id="label"><label>Replace Urls:</label></div>
+            <div class="replace_frame oneline_frame">
+                <textarea id="replace_from" rows="1"></textarea>
+                <label style="text-align: center; vertical-align: middle"
+                    >&nbsp;&rarr;&nbsp;</label
+                >
+                <textarea id="replace_to" rows="1"></textarea>
+                <input type="checkbox" id="is_regex" /><label for="is_regex"
+                    >Regex</label
+                >
+                &nbsp;&nbsp;
+                <button id="rep_btn">Replace</button>
+            </div>
+            <p></p>
+            <div class="oneline_frame">
+                <select id="fill_list"></select>
+                &nbsp;&nbsp;
+                <button id="fill_btn">Fill in the replace</button>
+                &nbsp;&nbsp;
+                <button id="set_btn">Setting</button>
+            </div>
+        </div>
+        <script src="common.js"></script>
+        <script type="text/javascript" src="popup.js"></script>
+    </body>
+</html>
